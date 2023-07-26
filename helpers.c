@@ -15,7 +15,7 @@ int check(char *buffer, int j, char **inpts)
 	unsigned int i = 0;
 
 	strcpy(buffer2, buffer);
-	token = _strtok(buffer2, " ");
+	token = strtok(buffer2, " ");
 	for (i = 0; i < strlen(buffer2); i++)
 	{
 		if (buffer2[i] == '/')
