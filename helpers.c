@@ -32,7 +32,7 @@ int check(char *buffer, int j, char **inpts)
 	return (k);
 }
 
-void pre(char **in)
+void pre(void)
 {
 	char buffer[1000] , *token2;
         FILE *input;
