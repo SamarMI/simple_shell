@@ -30,6 +30,7 @@ typedef struct liststr
 	struct liststr *next;
 } list_t;
 
+extern char **environ;
 
 /*string_functions1.c */
 char *_strcpy(char *, char *);
@@ -82,6 +83,13 @@ void interactive(char **env);
 int execute(char **inputs, char **env);
 void freein(char *buffer, char **inpts, int j, int x);
 int non_interactive(char **env);
+
+void set_env( char *var, char *value);
+void unset_env(char *var);
+void set2(char *var, char *value, unsigned int size);
+
+char *_strtok2(void);
+char *_strtok(char *str, const char *delim);
 
 #endif
 
