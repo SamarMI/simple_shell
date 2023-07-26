@@ -5,4 +5,5 @@
 ## 3. Simple shell 0.3
 ## 4. Simple shell 0.4
 ## 5. Simple shell 1.0
+## 6. Simple shell 0.1.1
 
