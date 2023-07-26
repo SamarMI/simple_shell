@@ -31,6 +31,15 @@ int check(char *buffer, int j, char **inpts)
 	}
 	return (k);
 }
+void env_print(void)
+{
+	int k;
+
+	for(k = 0 ; environ[k] != NULL; k++)
+	{
+		printf("%s\n",environ[k]);
+	}
+}
 /**
  * freein - free input
  * @buffer: buffer input from user.

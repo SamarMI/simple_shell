@@ -41,10 +41,7 @@ void interactive(char **env)
 		}
 		if (strcmp(buffer, "env") == 0) 
 		{
-			for(k = 0 ; env[k] != NULL; k++)
-			{
-			printf("%s\n",env[k]);
-			}
+			env_print();
 			continue;
 		}
 		k = check(buffer, j, inpts);
@@ -106,10 +103,7 @@ int non_interactive(char **env)
 		}
 		if (strcmp(in[i], "env") == 0)
 		{
-			for(k = 0 ; env[k] != NULL; k++)
-			{
-				printf("%s\n",env[k]);
-			}
+			env_print();
 			i++;
 			continue;
 		}
