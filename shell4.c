@@ -1,6 +1,12 @@
 #include "shell.h"
 
-
+/**
+ * main - shell program in interactive/noninteractive mode
+ * @argc: number of command line arguments
+ * @argv: command line arguments
+ * @env: environment variable
+ * RETURN: 0 on success
+ */
 
 int main(int argc, char **argv, char **env)
 {
@@ -19,6 +25,11 @@ int main(int argc, char **argv, char **env)
 	}
 	return (0);
 }
+
+/**
+ * interactive - uses interactive mode
+ * @env: environment variable
+ */
 
 void interactive(char **env)
 {
@@ -62,6 +73,12 @@ void interactive(char **env)
 	}
 }
 
+/**
+ * non_interactive - uses non interactive mode
+ * @env: environment variables
+ * Return: 0 on success
+ */
+
 int non_interactive(char **env)
 {
 	char *token, *inpts[20];
@@ -100,6 +117,14 @@ int non_interactive(char **env)
 	}
 	return (0);
 }
+
+/**
+ * execute - executes a command of the shell
+ * @inputs: command and arguments
+ * @env: environment variables
+ * Return: 0 on success
+ */
+
 int execute(char **inputs, char **env)
 {
 	int status;
@@ -111,27 +136,28 @@ int execute(char **inputs, char **env)
 	}
 	else
 	{
-		/*
-		if (access(inputs[0], F_OK) == 0)*/
 		{
 			pid = fork();
 			wait(&status);
 			if (pid == 0)
 			{
-			if (execve(inputs[0], inputs, env) == -1)
-			{
+				if (execve(inputs[0], inputs, env) == -1)
+				{
 					exit(2);
 				}
 			}
-		}/*
-		else
-		{
-			perror("");
-			return;
-		}*/
+		}
 	}
-	return (2);
+	return (0);
 }
+
+/**
+ * path_cm - gets the path of the command
+ * @cm: command to use
+ * @full_command2: full command with the path
+ * Return: the full command with the path or command 
+ * only if there is no path
+ */
 
 char *path_cm(char *cm, char *full_command2)
 {
