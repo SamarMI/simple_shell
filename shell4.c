@@ -48,16 +48,16 @@ void interactive(char **env)
 			continue;
 		}
 		k = check(buffer, j, inpts);
-		token = strtok(buffer, " ");
+		token = _strtok(buffer, " ");
 		if (k == 0)
 		{
-			token = strtok(NULL, " ");
+			token = _strtok(NULL, " ");
 			j++;
 		}
 		while (token != NULL)
 		{
 			inpts[j++] = token;
-        		token = strtok(NULL, " ");
+        		token = _strtok(NULL, " ");
     		}
 		inpts[j] = NULL;
 		execute(inpts, env);
@@ -87,11 +87,11 @@ int non_interactive(char **env)
 	}
 	buffer[i] = '\0';
 	i = 0;
-	token2 = _strtok(buffer, "\n");
+	token2 = strtok(buffer, "\n");
 	while (token2 != NULL)
 	{
 		in[i++] = token2;
-		token2 = _strtok(NULL, "\n");
+		token2 = strtok(NULL, "\n");
 	}
 	in[i] = NULL;
 	i = 0;
@@ -115,16 +115,16 @@ int non_interactive(char **env)
 		}
 		j = 0;
 		k = check(in[i], j, inpts);
-		token = _strtok(in[i++], " ");
+		token = strtok(in[i++], " ");
 		if (k == 0)
 		{
-			token = _strtok(NULL, " ");
+			token = strtok(NULL, " ");
 			j++;
 		}
 		while (token != NULL)
 		{
 			inpts[j++] = token;
-        		token = _strtok(NULL, " ");
+        		token = strtok(NULL, " ");
     		}
 		inpts[j] = NULL;
 		err = execute(inpts, env);
