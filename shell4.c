@@ -87,11 +87,11 @@ int non_interactive(char **env)
 	}
 	buffer[i] = '\0';
 	i = 0;
-	token2 = _strtok(buffer, "\n");
+	token2 = strtok(buffer, "\n");
 	while (token2 != NULL)
 	{
 		in[i++] = token2;
-		token2 = _strtok(NULL, "\n");
+		token2 = strtok(NULL, "\n");
 	}
 	in[i] = NULL;
 	i = 0;
@@ -115,16 +115,16 @@ int non_interactive(char **env)
 		}
 		j = 0;
 		k = check(in[i], j, inpts);
-		token = _strtok(in[i++], " ");
+		token = strtok(in[i++], " ");
 		if (k == 0)
 		{
-			token = _strtok(NULL, " ");
+			token = strtok(NULL, " ");
 			j++;
 		}
 		while (token != NULL)
 		{
 			inpts[j++] = token;
-        		token = _strtok(NULL, " ");
+        		token = strtok(NULL, " ");
     		}
 		inpts[j] = NULL;
 		err = execute(inpts, env);
@@ -177,7 +177,7 @@ char *path_cm(char *cm, char *full_command2)
 	{
 		path2 = strdup(path);
 		cm_size = strlen(cm);
-		token = strtok(path2, ":");
+		token = _strtok(path2, ":");
 		while(token != NULL)
 		{
 			dir_size = strlen(token);
@@ -196,7 +196,7 @@ char *path_cm(char *cm, char *full_command2)
 			else
 			{
 				free(full_command);
-				token = strtok(NULL, ":");
+				token = _strtok(NULL, ":");
 			}
 		}
 		free(path2);
