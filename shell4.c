@@ -64,10 +64,10 @@ void interactive(char **env)
 
 int non_interactive(char **env)
 {
-	char *token, **in, *inpts[20];
+	char *token, *in[20], *inpts[20];
 	int j = 0, k, i = 0, err = 0;
 
-	in = pre();
+	pre(in);
 	while (in[i] != NULL)
 	{
 		if (strcmp(in[i], "exit") == 0)

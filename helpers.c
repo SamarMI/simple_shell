@@ -32,10 +32,9 @@ int check(char *buffer, int j, char **inpts)
 	return (k);
 }
 
-char **pre(void)
+void pre(char **in)
 {
 	char buffer[1000] , *token2;
-      	static char *in[20];
         FILE *input;
         int i = 0;
 
@@ -62,7 +61,6 @@ char **pre(void)
                 token2 = strtok(NULL, "\n");
         }
         in[i] = NULL;
-        return (in);
 }
 /**
  * env_print - prints environment variables
