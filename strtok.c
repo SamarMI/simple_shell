@@ -16,6 +16,8 @@ char *_strtok(char *str, const char *delim)
 	
 	if (str != NULL)
 	{
+		position = 0;
+		token = NULL;
 		len = strlen(str);
 		for (i = 0; i < len; i++)
 		{
