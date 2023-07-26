@@ -48,16 +48,16 @@ void interactive(char **env)
 			continue;
 		}
 		k = check(buffer, j, inpts);
-		token = strtok(buffer, " ");
+		token = _strtok(buffer, " ");
 		if (k == 0)
 		{
-			token = strtok(NULL, " ");
+			token = _strtok(NULL, " ");
 			j++;
 		}
 		while (token != NULL)
 		{
 			inpts[j++] = token;
-        		token = strtok(NULL, " ");
+        		token = _strtok(NULL, " ");
     		}
 		inpts[j] = NULL;
 		execute(inpts, env);
