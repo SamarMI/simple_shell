@@ -61,6 +61,7 @@ void pre(char **in)
                 token2 = strtok(NULL, "\n");
         }
         in[i] = NULL;
+	i = 0;
 }
 /**
  * env_print - prints environment variables
