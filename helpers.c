@@ -29,6 +29,10 @@ int check(char *buffer, int j, char **inpts)
 		in = path_cm(token, full_command2);
 		inpts[j] = in;
 	}
+	while (token != NULL)
+	{
+		token = _strtok(NULL, " ");
+	}
 	return (k);
 }
 /**
