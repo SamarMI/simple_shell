@@ -1,6 +1,9 @@
 # simple_shell_project
+
 ## TASK 0
 ### 0. Betty would be proud
+
+
 ## TASK 1
 ### 1. Simple shell 0.1
 ##  TASK 2
