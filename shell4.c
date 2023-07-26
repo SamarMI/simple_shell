@@ -149,7 +149,7 @@ int non_interactive(char **env)
  * execute - executes a command of the shell
  * @inputs: command and arguments
  * @env: environment variables
- * Return: 0 on success
+ * Return: always 2
  */
 
 int execute(char **inputs, char **env)
@@ -175,7 +175,7 @@ int execute(char **inputs, char **env)
 			}
 		}
 	}
-	return (0);
+	return (2);
 }
 
 /**
