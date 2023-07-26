@@ -51,7 +51,7 @@ void interactive(char **env)
 		token = _strtok(buffer, " ");
 		if (k == 0)
 		{
-			token = strtok(NULL, " ");
+			token = _strtok(NULL, " ");
 			j++;
 		}
 		while (token != NULL)
