@@ -64,7 +64,6 @@ void interactive(char **env)
 		}
 		if (i == 6)
 		{
-			printf("here1\n");
 			token = strtok(buffer, " ");
 			variable = strtok(NULL, " ");
 			value = token = strtok(NULL, " ");
@@ -78,7 +77,6 @@ void interactive(char **env)
                 }
 		if (i == 8)
                 {
-                        printf("hereeeeee\n");
                         token = strtok(buffer, " ");
                         variable = strtok(NULL, " ");
                         unset_env(variable);
@@ -161,7 +159,6 @@ int non_interactive(char **env)
                 }
                 if (j == 6)
                 {
-                        printf("here1\n");
                         token = strtok(in[i], " ");
                         variable = strtok(NULL, " ");
                         value = token = strtok(NULL, " ");
@@ -175,7 +172,6 @@ int non_interactive(char **env)
                 }
                 if (j == 8)
                 {
-                        printf("hereeeeee\n");
                         token = strtok(in[i], " ");
                         variable = strtok(NULL, " ");
                         unset_env(variable);
