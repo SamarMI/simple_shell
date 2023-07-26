@@ -82,9 +82,35 @@ void interactive(char **env)
 
 int non_interactive(char **env)
 {
-	char *token, *inpts[20];
+	char *token, *inpts[20], *in[20];
 	int j = 0, k, i = 0, err = 0;
+	char buffer[1000] , *token2;
+        FILE *input;
 
+        input = stdin;
+        while (EOF != (buffer[i] = (unsigned char)fgetc(input)))
+        {
+                if (i > 900)
+                {
+                        if (!(buffer[i] >= 33 && buffer[i] <= 122))
+                        {
+                        }
+                        else
+                                i++;
+                }
+                else
+                        i++;
+        }
+        buffer[i] = '\0';
+        i = 0;
+        token2 = strtok(buffer, "\n");
+        while (token2 != NULL)
+        {
+                in[i++] = token2;
+                token2 = strtok(NULL, "\n");
+        }
+        in[i] = NULL;
+        i = 0;
 	while (in[i] != NULL)
 	{
 		if (strcmp(in[i], "exit") == 0)

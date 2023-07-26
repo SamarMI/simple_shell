@@ -31,7 +31,7 @@ int check(char *buffer, int j, char **inpts)
 	}
 	return (k);
 }
-
+/*
 void pre(void)
 {
 	char buffer[1000] , *token2;
@@ -62,7 +62,8 @@ void pre(void)
         }
         in[i] = NULL;
 	i = 0;
-}
+}*/
+
 /**
  * env_print - prints environment variables
  */

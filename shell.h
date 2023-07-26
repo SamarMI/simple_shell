@@ -92,6 +92,6 @@ void set2(char *var, char *value, unsigned int size);
 
 char *_strtok2(void);
 char *_strtok(char *str, const char *delim);
-char *in[20];
+
 #endif
 
