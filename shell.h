@@ -84,6 +84,8 @@ int execute(char **inputs, char **env);
 void freein(char *buffer, char **inpts, int j, int x);
 int non_interactive(char **env);
 void env_print(void);
+char **pre(void);
+
 void set_env( char *var, char *value);
 void unset_env(char *var);
 void set2(char *var, char *value, unsigned int size);

@@ -31,6 +31,43 @@ int check(char *buffer, int j, char **inpts)
 	}
 	return (k);
 }
+
+char **pre(void)
+{
+	char buffer[1000] , *token2;
+      	static char *in[20];
+        FILE *input;
+        int i = 0;
+
+        input = stdin;
+        while (EOF != (buffer[i] = (unsigned char)fgetc(input)))
+        {
+                if (i > 900)
+                {
+                        if (!(buffer[i] >= 33 && buffer[i] <= 122))
+                        {
+                        }
+                        else
+                                i++;
+                }
+                else
+                        i++;
+        }
+        buffer[i] = '\0';
+        i = 0;
+        token2 = strtok(buffer, "\n");
+        while (token2 != NULL)
+        {
+                in[i++] = token2;
+                token2 = strtok(NULL, "\n");
+        }
+        in[i] = NULL;
+        return (in);
+}
+/**
+ * env_print - prints environment variables
+ */
+
 void env_print(void)
 {
 	int k;
@@ -40,6 +77,7 @@ void env_print(void)
 		printf("%s\n",environ[k]);
 	}
 }
+
 /**
  * freein - free input
  * @buffer: buffer input from user.
@@ -47,6 +85,7 @@ void env_print(void)
  * @inpts: pointer to input pointer.
  * @x: an integer to free buffer.
 */
+
 void freein(char *buffer, char **inpts, int j, int x)
 {
 	if (x == 1)
