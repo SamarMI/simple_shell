@@ -177,7 +177,7 @@ char *path_cm(char *cm, char *full_command2)
 	{
 		path2 = strdup(path);
 		cm_size = strlen(cm);
-		token = _strtok(path2, ":");
+		token = strtok(path2, ":");
 		while(token != NULL)
 		{
 			dir_size = strlen(token);
@@ -196,7 +196,7 @@ char *path_cm(char *cm, char *full_command2)
 			else
 			{
 				free(full_command);
-				token = _strtok(NULL, ":");
+				token = strtok(NULL, ":");
 			}
 		}
 		free(path2);
