@@ -90,9 +90,8 @@ void unset_env(char *var)
 	char **arr;
 	
 	for (i = 0; environ[i] != NULL; i++)
-	{
-		printf("%s\n",environ[i]);
-	}
+        {
+        }
 	size = i + 1;
 	arr = malloc(sizeof(char *) * (size - 1));
 	if (arr == NULL || getenv(var) == NULL)

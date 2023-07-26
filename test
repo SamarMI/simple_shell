@@ -1,0 +1,10 @@
+env
+setenv TZ salmaaaaa
+setenv salma aaaaaaaaaaaaaaaaaaaaaaa
+env
+unsetenv salma
+env
+unsetenv TZ
+env
+
+
