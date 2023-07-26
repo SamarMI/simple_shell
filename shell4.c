@@ -68,7 +68,7 @@ int non_interactive(char **env)
 	int j = 0, k, i = 0, err = 0;
 	char buffer[1000] , *token2;
         FILE *input;
-        int i = 0;
+        
 
         input = stdin;
         while (EOF != (buffer[i] = (unsigned char)fgetc(input)))
